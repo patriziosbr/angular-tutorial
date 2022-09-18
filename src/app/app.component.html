@@ -1,0 +1,89 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6 m-auto">
+            <h5>New Task</h5>
+            <form [formGroup]="taskForm" class="card p-5" (ngSubmit)="onSubmit()" >
+                <label for="heading">Heading</label>
+                <input formControlName="heading" type="text" class="form-control" id="heading" >
+                <small *ngIf="heading && heading.invalid && (heading.touched || submitted)" class="text-danger">Required</small>
+                <label for="description">Description</label>
+                <textarea formControlName="description" class="form-control" name="description" id="description" cols="10" rows="5"></textarea>
+                <small *ngIf="desc && desc.invalid && (desc.touched || submitted)" class="text-danger">Required</small>
+                <button class="btn btn-primary mt-3">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-6 m-auto">
+            <h3>List of tasks</h3>
+            <br>
+            <app-task *ngFor="let task of tasks" [task]="task"></app-task>
+        </div>
+    </div>
+</div>
+
+
+<!-- ng services dependecy injection-->
+<!-- ng g s 'nome del servizio senza apici' -->
+<!-- <app-task *ngFor="let task of tasks" [task]="task"></app-task> -->
+<!-- ng services end -->
+
+<!-- custom pipe -->
+<!-- <h2>
+    {{number | multi:10}}
+</h2> -->
+<!-- custom pipe per creare custom pipe run ng g p nome della pipe-->
+
+<!-- date pipe currency pipe -->
+<!-- {{today | date:"fullDate"}} -->
+<br>
+<!-- {{amount | currency:"eur" }} -->
+<!-- date pipe currency pipe -->
+
+<!-- practice 2 ngFor ngIf ngClass -->
+<!-- <div class="container">
+    <div class="row">
+        <app-post *ngFor="let post of posts" [post]="post"></app-post>
+    </div>
+</div> -->
+<!-- practice 2 ngFor ngIf ngClass end-->
+
+<!-- <app-practice></app-practice> -->
+
+<!-- excercise 1 -->
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-lg-12">
+            <div class="d-flex flex-column">
+                <app-post 
+                title="ciao sono un Titolo" 
+                author="dino">
+                    angulare content projection
+                </app-post>
+                <app-post
+                title="un altro titolo"
+                author="pino">
+                    super flexible
+                </app-post>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- <app-test>
+    <h3 title>Titolo 1</h3>
+    <h2 subtitle>Sub title</h2>
+    <p paragraph>sono un paragrafo</p>
+</app-test>
+
+<app-test>
+    <h3 title>Titolo 2</h3>
+    <h2 subtitle>Sub title 2</h2>
+    <p paragraph>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis, blanditiis.
+    </p>
+</app-test> -->
+
+<!-- <app-test name="bibbo">
+    <h3 accatre>Ciao sono un h3</h3>
+    <h5 accaCinque>ciao sono un h5</h5>
+</app-test> -->

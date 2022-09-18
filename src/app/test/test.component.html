@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="card">
+        <ng-content select="[title]"></ng-content>
+        <ng-content select="[subtitle]"></ng-content>
+        <ng-content select="[paragraph]"></ng-content>
+    </div>
+</div>
+
+<div>
+    <button (click)="decrement()">click --</button>
+    <p>conter: {{ counter }}</p>
+    <button (click)="increment()">click ++</button>
+</div>
+
+<!-- <p>test works! {{ pippos[0] }}</p>
+<p>test works! {{ pippos[1] }}</p>
+
+<p>test works! {{ getName() }}</p>
+
+
+<p> {{ name }}</p>
+<ng-content select="[accaCinque]"></ng-content>
+<ng-content select="[accatre]"></ng-content> -->

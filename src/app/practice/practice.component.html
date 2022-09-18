@@ -1,0 +1,33 @@
+<!-- ngFor -->
+<p>{{ names }}</p> 
+<h4 *ngFor="let name of names">
+    {{ name }}
+</h4>
+<!-- ngFor end-->
+
+<!-- ng class -->
+<div 
+    [ngClass]="{'bg' : showBg }"
+    class="box"
+>
+</div>
+<button (click)="toggleBg()" class="btn btn-primary">Toggle bg</button>
+<!-- ngClass end-->
+
+<!-- ngIf  -->
+<div 
+    *ngIf="showBox"
+    class="box"
+>
+</div>
+<p *ngIf="!showBox">Lorem ipsum dolor sit amet.</p>
+<button (click)="toggleBox()" class="btn btn-primary">Toggle box</button>
+
+<!-- soluzione poco pratica meglio due if crea un <p> (<p_ngblabla) quindi poco utilizzabile-->
+<!-- <ng-template #dontShow>
+    <div>
+        <p>Lorem ipsum dolor sit.</p>
+    </div>
+</ng-template> -->
+
+<!-- ngIf end -->
